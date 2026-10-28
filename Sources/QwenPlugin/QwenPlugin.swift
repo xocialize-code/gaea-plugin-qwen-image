@@ -195,7 +195,7 @@ let flashParams: JSONValue = ["type": "object", "additionalProperties": false, "
 
 public let qwenPlugin = GaeaPluginDefinition(
     id: "com.xocialize.gaea.qwen-image",
-    version: "0.1.0",
+    version: "0.1.1",
     minGaea: "0.2.0",
     team: "CFZS6RXUCP",
     repo: "https://github.com/xocialize/gaea-plugin-qwen-image",
@@ -216,7 +216,7 @@ public let qwenPlugin = GaeaPluginDefinition(
         PluginManifest.Offer(
             operation: "image.edit", profile: "image",
             model: ["id": "qwen-image-edit", "title": "Qwen-Image-Edit 2511", "license": apache, "memory_class": "xlarge",
-                    "speed_class": "slow", "quality_tiers": ["best"],
+                    "speed_class": "slow", "quality_tiers": ["standard", "best"],
                     "notes": .string("Instruction editing with up to 3 references, named \"Picture 1\", \"Picture 2\"… in the instruction. "
                         + "Draws about 1024² at the first image's aspect; 20 steps of true CFG. Needs about 63 GB.")],
             params: editParams,
@@ -224,7 +224,7 @@ public let qwenPlugin = GaeaPluginDefinition(
         PluginManifest.Offer(
             operation: "image.generate", profile: "image",
             model: ["id": "qwen-image-flash", "title": "Qwen-Image Flash", "license": nvidia, "memory_class": "large",
-                    "speed_class": "standard", "quality_tiers": ["standard"],
+                    "speed_class": "standard", "quality_tiers": ["draft", "standard"],
                     "notes": "4 distilled steps without CFG: negative prompts do nothing. Strong text rendering and layout."],
             params: flashParams, defaults: ["count": 1],
             limits: PluginManifest.Limits(maxPixels: targetArea, minSide: minSide, maxSide: maxSide, sizeMultiple: 16)),

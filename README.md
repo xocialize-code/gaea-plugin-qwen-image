@@ -13,8 +13,8 @@ gaea plugins add https://github.com/xocialize/gaea-plugin-qwen-image
 
 | Model | MES operation | Quality tiers | Notes |
 |---|---|---|---|
-| `qwen-image-edit` | `image.edit` | best | Qwen-Image-Edit 2511: high-fidelity instruction editing with 1–3 references, named "Picture 1", "Picture 2"… in the instruction. 20 steps of true CFG at guidance 4. |
-| `qwen-image-flash` | `image.generate` | standard | Qwen-Image Flash, NVIDIA's DMD2 4-step distill of Qwen-Image: strong text rendering and layout. No CFG, so a negative prompt does nothing (`negative_prompt_ignored`). |
+| `qwen-image-edit` | `image.edit` | standard, best | Qwen-Image-Edit 2511: high-fidelity instruction editing with 1–3 references, named "Picture 1", "Picture 2"… in the instruction. 20 steps of true CFG at guidance 4. |
+| `qwen-image-flash` | `image.generate` | draft, standard | Qwen-Image Flash, NVIDIA's DMD2 4-step distill of Qwen-Image: strong text rendering and layout. No CFG, so a negative prompt does nothing (`negative_prompt_ignored`). |
 
 - **Edit sizes.** The output is about 1024² in area at the first image's aspect, sides in multiples of 32: a
   1280×768 input is edited at 1312×800. A different size is reported `size_snapped`; a requested `size` and
