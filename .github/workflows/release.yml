@@ -57,6 +57,13 @@ jobs:
           sudo xcode-select -s "$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1)"
           xcrun swift --version
 
+      # mlx-swift compiles its kernels into default.metallib with the Metal compiler, which Xcode 26 ships as a
+      # separate component. Without it SwiftPM builds the worker but no metallib, and the bundle can't run on a GPU.
+      - name: Install the Metal toolchain
+        run: |
+          xcodebuild -downloadComponent MetalToolchain
+          xcrun -f metal
+
       - name: Import the Developer ID certificate into a temporary keychain
         env:
           P12_BASE64: ${{ secrets.DEVELOPER_ID_P12_BASE64 }}
