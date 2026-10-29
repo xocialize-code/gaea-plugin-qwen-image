@@ -198,7 +198,7 @@ public let qwenPlugin = GaeaPluginDefinition(
     version: "0.1.1",
     minGaea: "0.2.0",
     team: "CFZS6RXUCP",
-    repo: "https://github.com/xocialize/gaea-plugin-qwen-image",
+    repo: "https://github.com/xocialize-code/gaea-plugin-qwen-image",
     title: "Qwen-Image",
     summary: "Qwen's 20B image family: Qwen-Image-Edit 2511 (Apache-2.0), a high-fidelity instruction editor with up to 3 "
         + "references, and Qwen-Image Flash (NVIDIA Open Model License), 4-step text to image with strong text rendering.",
