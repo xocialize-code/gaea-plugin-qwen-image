@@ -22,8 +22,16 @@ gaea plugins add https://github.com/xocialize-code/gaea-plugin-qwen-image
 - **Generate sizes.** 256–2048 px a side, at most 1024² in area, in multiples of 16 (`size_snapped`). `count` 1–8,
   each with `seed + i`. A request without a seed gets one, reported in `effective`.
 - **Options**, as MES extensions: `x-qwen.steps` (both) and `x-qwen.guidance` (edit).
-- **Not yet offered:** per-request LoRA adapters (Flash and Edit Turbo take them), Edit Turbo (the Lightning 4-step
-  LoRA, with an int4 tier for smaller Macs), Flash's bf16 lane, and the edit's opt-in step cache.
+- **Adapters on Flash (0.2.0).** Up to 4 LoRAs stacked at strength 0–2, in the diffusers-peft, kohya and
+  diffusers-legacy dialects (`QwenImageFlashAdapters.support`, base model `qwen-image`). Flash ships the 27 Qwen-Image
+  adapters pixel-agency-image-engine v0.9.1 registers, from the same registry (`Sources/QwenPlugin/Resources/qwen-image.json`,
+  verbatim from mlx-image-runtime 0.15.0 = qwen-image-edit-swift `registry/qwen-image.json` @16584ad): ids
+  `qwen-image:<id>`, the same pinned revisions and sha256s. All 27 are `candidate`s (18 CreativeML-OpenRAIL-M, 5
+  Apache-2.0, 4 NOASSERTION), so Gaea makes them opt-in. Gaea can also attach the operator's own LoRAs for
+  `qwen-image`. The worker fetches each into the models root (`adapters/<sha256>/`) on first use; Gaea applies triggers
+  before the run. Qwen-Image-Edit 2511's package takes no adapters, so its offer declares none. Requires Gaea 0.7.0.
+- **Not yet offered:** Edit Turbo (the Lightning 4-step LoRA, with an int4 tier for smaller Macs, and adapters of its
+  own), Flash's bf16 lane, and the edit's opt-in step cache.
 
 ## Lanes and memory
 
@@ -58,7 +66,16 @@ notarizes with the fleet's `mlx-notary` profile, and publishes the GitHub releas
 [demo plugin](https://github.com/xocialize-code/gaea-plugin-demo) for signing, notarization and CI secrets.
 
 `qwen-inproc` is not part of the plugin: it runs the same lane in-process through MLXServeEngine, the reference that
-Gaea's runs are compared against byte for byte.
+Gaea's runs are compared against byte for byte (`--adapter <id>=<strength>` applies shipped adapters).
+
+```bash
+scripts/golden.sh <out-dir>
+```
+
+`golden.sh` runs a seeded Flash image with two stacked adapters (`qwen-image:peter-chan-s-concept-art` 0.8, diffusers-peft,
+and `qwen-image:dott4k` 0.6, kohya, NOASSERTION) over GPP on the signed bundle (`gaea-plugin-check --adapter`, which
+builds `run.adapters` from the manifest as Gaea does) and through `qwen-inproc` with the same `AdapterRef`s, and needs
+them byte for byte the same. A no-adapter control must differ.
 
 ## Licence
 

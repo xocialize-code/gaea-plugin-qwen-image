@@ -1,5 +1,5 @@
 {
-  "originHash" : "e0911a06cacf5f78459123f28eebe1cf71afca40a1306bc6e7015fa3e58ef7dd",
+  "originHash" : "1aceaca9422e99ed7c05d93cba2f9c756d8941915f85ca4f1ec0a090406f71d0",
   "pins" : [
     {
       "identity" : "designscaffold",
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/xocialize-code/gaea-plugin-kit.git",
       "state" : {
-        "revision" : "8467911a4b77f1d06eb4cd21fea175a1282a19d2",
-        "version" : "0.2.0"
+        "revision" : "48b6966d128239b00d5f15afbe7388bb37315d68",
+        "version" : "0.5.0"
       }
     },
     {

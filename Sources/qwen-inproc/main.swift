@@ -13,6 +13,8 @@ import QwenPlugin
 //   qwen-inproc --model qwen-image-edit --image <png> [--image <png> ...] [--prompt <instruction>] [--steps 20]
 //               [--guidance 4] [--seed 42]
 //   both: [--models-root <dir>] [--out <png>] [--runs 2]
+//   flash: [--adapter <id>=<strength> ...]  shipped adapters (qwen-image:<id>), registered and applied as the engine
+//          does for the worker; fetched into <models-root>/adapters/<sha256>/ when missing
 
 var args = Array(CommandLine.arguments.dropFirst())
 func option(_ name: String) -> String? {
@@ -47,12 +49,19 @@ let guidance = Double(option("--guidance") ?? "") ?? model.defaultGuidance
 let seed = UInt64(option("--seed") ?? "") ?? 42
 let runs = Int(option("--runs") ?? "") ?? 2
 let imagePaths = options("--image")
+let adapterRefs: [AdapterRef] = options("--adapter").map { spec in
+    let parts = spec.split(separator: "=", maxSplits: 1).map(String.init)
+    return AdapterRef(id: parts[0], strength: parts.count > 1 ? Double(parts[1]) : nil)
+}
 let outPath = option("--out")
 let modelsRoot = URL(fileURLWithPath: option("--models-root")
                      ?? NSHomeDirectory() + "/Library/Application Support/MLXEngine/Models", isDirectory: true)
 
 var result: [String: Any] = ["model": model.rawValue, "steps": steps, "guidance": guidance, "seed": seed,
                              "references": imagePaths.count]
+if !adapterRefs.isEmpty {
+    result["adapters"] = adapterRefs.map { "\($0.id)=\($0.strength.map { String($0) } ?? "default")" }
+}
 
 // The budget Gaea sends a worker on a large Mac (wiresWeights off, the automatic pool cap).
 let engine = MLXServeEngine(workerBudget: WorkerBudget(ceilingBytes: 100_000_000_000, wiresWeights: false))
@@ -68,7 +77,15 @@ case .edit:
     request = IEditRequest(images: images, prompt: prompt, steps: steps, guidanceScale: guidance, seed: seed)
 case .flash:
     _ = try await engine.register(QwenImageFlashPackage.registration, configuration: QwenLanes.flash(), id: id)
-    request = T2IRequest(prompt: prompt, width: width, height: height, steps: steps, guidanceScale: guidance, seed: seed)
+    for ref in adapterRefs {
+        guard let shipped = flashAdapters.first(where: { $0.id == ref.id }) else {
+            FileHandle.standardError.write(Data("no shipped adapter \(ref.id)\n".utf8))
+            exit(2)
+        }
+        try await engine.registerAdapter(shipped.descriptor)
+    }
+    request = T2IRequest(prompt: prompt, width: width, height: height, steps: steps, guidanceScale: guidance, seed: seed,
+                         adapters: adapterRefs)
 }
 
 var clock = ContinuousClock.now

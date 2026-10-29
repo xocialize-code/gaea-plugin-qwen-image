@@ -15,7 +15,7 @@ let package = Package(
     platforms: [.macOS(.v26)], // mlx-engine-swift's MLXToolKit requires macOS 26
     dependencies: [
         kitPath.map { .package(path: $0) }
-            ?? .package(url: "https://github.com/xocialize-code/gaea-plugin-kit.git", from: "0.2.0"),
+            ?? .package(url: "https://github.com/xocialize-code/gaea-plugin-kit.git", from: "0.5.0"),
         .package(url: "https://github.com/xocialize/qwen-image-edit-swift.git", exact: "0.11.0"),
         .package(url: "https://github.com/xocialize/mlx-engine-swift.git", from: "0.72.0"),
     ],
@@ -28,7 +28,10 @@ let package = Package(
                 .product(name: "MLXQwenImageEdit", package: "qwen-image-edit-swift"),
                 .product(name: "MLXQwenImageFlash", package: "qwen-image-edit-swift"),
                 .product(name: "MLXToolKit", package: "mlx-engine-swift"),
-            ]
+            ],
+            // v0.9.1's Qwen-Image adapter registry, verbatim (mlx-image-runtime 0.15.0 = qwen-image-edit-swift
+            // registry/qwen-image.json @16584ad), compiled into the worker: the bundle carries no SwiftPM resource bundle.
+            resources: [.embedInCode("Resources/qwen-image.json")]
         ),
         .executableTarget(
             name: "gaea-qwen-image-worker",

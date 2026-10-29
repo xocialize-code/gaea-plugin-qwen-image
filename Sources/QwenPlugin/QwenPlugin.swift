@@ -19,6 +19,11 @@ import QwenImageEdit
 //
 // Weights come from the models root Gaea sends in configure (MLXEngine's store by default); the engine materializes a
 // missing snapshot there.
+//
+// Flash takes adapters (AB-T-0381): the 27 Qwen-Image LoRAs pixel-agency-image-engine v0.9.1 registers, shipped from
+// the same registry (ids qwen-image:<id>, the same pinned revisions and sha256s), plus any the operator registers for
+// it, up to 4 stacked at 0–2 (`QwenImageFlashAdapters.support`). They ride the typed path (`T2IRequest.adapters`), never
+// the deprecated `FlashLoRAMetaKeys.stack`. Edit 2511's package takes none, so its offer declares no adapter support.
 
 /// Both models' envelope in mlx-image-runtime's catalog: about 1024² of output.
 public let targetArea = 1024 * 1024
@@ -33,6 +38,17 @@ public enum QwenModel: String, Sendable {
     /// Edit runs true CFG at 4; Flash internalized guidance in its distillation and runs at 1.
     public var defaultGuidance: Double { self == .edit ? 4 : 1 }
 }
+
+/// The Qwen-Image adapters Flash ships: v0.9.1's registry (`Resources/qwen-image.json`), as the engine registers them.
+public let flashAdapters: [ShippedAdapter] = {
+    do {
+        let decoded = try AdapterRegistry.decode(Data(PackageResources.qwen_image_json))
+        precondition(decoded.skipped.isEmpty, "qwen-image.json: \(decoded.skipped)")
+        return decoded.adapters
+    } catch {
+        preconditionFailure("qwen-image.json doesn't decode: \(error)")
+    }
+}()
 
 /// The package configurations, one per lane; qwen-inproc builds the same ones.
 public enum QwenLanes {
@@ -115,13 +131,15 @@ let flashGenerate = EngineOperation("image.generate", outputNames: ["image": "im
     }
     // Image profile §2: a request without a seed still gets one, reported in effective.
     let seed = job.seed ?? UInt64.random(in: 0..<(1 << 31))
+    // The run's adapters, as Gaea sent them (their triggers are already in the prompt).
+    let adapters = try job.adapterRefs()
     let effective: [String: JSONValue] = [
         "size": ["width": .int(Int64(size.width)), "height": .int(Int64(size.height))], "count": .int(Int64(count)),
         "seed": .int(Int64(seed)), "x-qwen.steps": .int(Int64(steps)),
     ]
     return (0..<count).map { i in
         EngineCall(T2IRequest(prompt: prompt, width: size.width, height: size.height, steps: steps,
-                              guidanceScale: QwenModel.flash.defaultGuidance, seed: seed + UInt64(i)),
+                              guidanceScale: QwenModel.flash.defaultGuidance, seed: seed + UInt64(i), adapters: adapters),
                    effective: effective, warnings: warnings)
     }
 }
@@ -195,8 +213,8 @@ let flashParams: JSONValue = ["type": "object", "additionalProperties": false, "
 
 public let qwenPlugin = GaeaPluginDefinition(
     id: "com.xocialize.gaea.qwen-image",
-    version: "0.1.1",
-    minGaea: "0.2.0",
+    version: "0.2.0",
+    minGaea: "0.7.0",
     team: "CFZS6RXUCP",
     repo: "https://github.com/xocialize-code/gaea-plugin-qwen-image",
     title: "Qwen-Image",
@@ -210,7 +228,7 @@ public let qwenPlugin = GaeaPluginDefinition(
                 operations: [edit]),
         .engine(QwenImageFlashPackage.self, id: QwenModel.flash.rawValue, title: "Qwen-Image Flash",
                 lanes: [LaneDefinition(id: "int8", default: true, configuration: QwenLanes.flash())],
-                operations: [flashGenerate]),
+                operations: [flashGenerate]).shipping(flashAdapters),
     ],
     offers: [
         PluginManifest.Offer(

@@ -1,0 +1,1244 @@
+{
+  "format": "adapter-registry",
+  "schemaVersion": 3,
+  "namespace": "qwen-image",
+  "title": "Qwen-Image adapters (Qwen-Image Flash)",
+  "description": "Community style adapters for Qwen-Image, served on Qwen-Image Flash (the Qwen Image Demo's gallery), pinned. Status candidate: header-checked, not yet judged on our stack.",
+  "adapters": [
+    {
+      "id": "peter-chan-s-concept-art",
+      "title": "Peter Chan's concept art",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/peter-chan-s-concept-art.safetensors",
+        "sha256": "5d5a7d2fa1b83f6aa9d6dfb7dc8178138b677ff5249aac30e1a9a6dce9dd3ee0",
+        "bytes": 590058848,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/pchan-concept-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "day-of-the-tentacle",
+      "title": "Day of the Tentacle",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/day-of-the-tentacle.safetensors",
+        "sha256": "d60270b7b18bfcb2ad617413887ce116a617621a6e800deb5a4de6e7b5911b09",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/dott-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "dott4k",
+      "title": "Dott4k",
+      "kind": "plain",
+      "format": "kohya",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "furaidosu/dott4k-qwen-image-lora",
+        "revision": "558137f8d745e87c13602fe45146b39bd7e7aabd",
+        "file": "LhBW3CcSiF6V7aKepWm3k_adapter.safetensors",
+        "sha256": "25f03695d2bde7d07fc5df3947d47ff41e56d9860214c472eb8a5d909f2e4507",
+        "bytes": 590154464,
+        "gated": false,
+        "hashFrom": "hub"
+      },
+      "license": "NOASSERTION",
+      "licenseTerms": {
+        "commercialUse": "unknown",
+        "gated": false,
+        "url": "https://huggingface.co/furaidosu/dott4k-qwen-image-lora/blob/558137f8d745e87c13602fe45146b39bd7e7aabd/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "kohya",
+        "tensors": 2520,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "dott4k-v2",
+      "title": "Dott4k.v2",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "furaidosu/dott4kv2-qwen-image-lora",
+        "revision": "03133c18f7ca56cd3c3484018ff3fed580eb41ee",
+        "file": "dott4k.safetensors",
+        "sha256": "9f2723c8145981085ef56afccfaf925f9e1369156e47b16783f4f94ab38257d7",
+        "bytes": 295146160,
+        "gated": false,
+        "hashFrom": "hub"
+      },
+      "license": "NOASSERTION",
+      "licenseTerms": {
+        "commercialUse": "unknown",
+        "gated": false,
+        "url": "https://huggingface.co/furaidosu/dott4kv2-qwen-image-lora/blob/03133c18f7ca56cd3c3484018ff3fed580eb41ee/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "dott4k-fal",
+      "title": "Dott4k.fal",
+      "kind": "plain",
+      "format": "kohya",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "furaidosu/dott4kfalcomplete-qwen-image-lora",
+        "revision": "49b926d6dc85b318402a6d46392fc256fb641587",
+        "file": "dott4k-fal-complete.safetensors",
+        "sha256": "9b4d96982e88b63290e866a89c9a4601fab758312b083ea7b6f36bcf43fa352d",
+        "bytes": 590154464,
+        "gated": false,
+        "hashFrom": "hub"
+      },
+      "license": "NOASSERTION",
+      "licenseTerms": {
+        "commercialUse": "unknown",
+        "gated": false,
+        "url": "https://huggingface.co/furaidosu/dott4kfalcomplete-qwen-image-lora/blob/49b926d6dc85b318402a6d46392fc256fb641587/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "kohya",
+        "tensors": 2520,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "dott4kv4-10epochs-modelscope",
+      "title": "Dott4kv4.10epochs.modelscope",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/dott4kv4-10epochs-modelscope.safetensors",
+        "sha256": "73cfee0e2ad5acf3a587ceab3bf358f8fce51f822cd34969bad87891304bef4d",
+        "bytes": 236117032,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/dott4kv4ep10-qwen-image-lora"
+      },
+      "license": "Apache-2.0",
+      "licenseTerms": {
+        "commercialUse": "allowed",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1440,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "sam-and-max-hit-the-road",
+      "title": "Sam and Max hit the road",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/sam-and-max-hit-the-road.safetensors",
+        "sha256": "a342495a1e152a1e216f8108116dd81b68c72ef8456758e3f1dc78ab54ff1d32",
+        "bytes": 590058816,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/samhtr-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "return-to-monkey-island",
+      "title": "Return to Monkey Island",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/return-to-monkey-island.safetensors",
+        "sha256": "24b6265d4685662e36df4480cd60ca9eb6ce61dcf0897b47e426db758e24543e",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/rtmi-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "rex-crowle",
+      "title": "Rex Crowle",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/rex-crowle.safetensors",
+        "sha256": "4240842161801b9c8598f3b314bd8e93196bb9ebe434331fca3e1f939519bd35",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/rexcrowle-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "total-drama",
+      "title": "Total Drama",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/total-drama.safetensors",
+        "sha256": "f6e9a2ca6dcb5bc442c2ab58ede855933d8fa99378732bca92c19b9fa1b49bc3",
+        "bytes": 590058848,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/totaldrama-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "enjuto-mojamuto",
+      "title": "Enjuto Mojamuto",
+      "kind": "plain",
+      "format": "kohya",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "furaidosu/enjuto-qwen-image-lora",
+        "revision": "02950bdd0f663224ef114b185fef10e883aca600",
+        "file": "fal-enjuto-qwen-image-lora.safetensors",
+        "sha256": "15eb61b03651e664b6243fa588af187640272e15d8fbc83627f37931d1e6c4ed",
+        "bytes": 590154464,
+        "gated": false,
+        "hashFrom": "hub"
+      },
+      "license": "NOASSERTION",
+      "licenseTerms": {
+        "commercialUse": "unknown",
+        "gated": false,
+        "url": "https://huggingface.co/furaidosu/enjuto-qwen-image-lora/blob/02950bdd0f663224ef114b185fef10e883aca600/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "kohya",
+        "tensors": 2520,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "masha-2d-cartoon",
+      "title": "Masha 2d cartoon",
+      "kind": "plain",
+      "format": "kohya",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/masha-2d-cartoon.safetensors",
+        "sha256": "2b3947b3814f7cb9cc2ba92319c0bd36b7b7422ba5d0eb693ffc4104933cd77a",
+        "bytes": 590154464,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/masha2d-cartoon-qwen-image-lora"
+      },
+      "license": "Apache-2.0",
+      "licenseTerms": {
+        "commercialUse": "allowed",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "kohya",
+        "tensors": 2520,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "masha-2d-anime",
+      "title": "Masha 2d anime",
+      "kind": "plain",
+      "format": "kohya",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/masha-2d-anime.safetensors",
+        "sha256": "4449a084e62348bcd0bc36195901e63c46c388b698876fcfe6c17baa77c5a751",
+        "bytes": 590154464,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/masha-2d-anime-qwen-image-lora"
+      },
+      "license": "Apache-2.0",
+      "licenseTerms": {
+        "commercialUse": "allowed",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "kohya",
+        "tensors": 2520,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "pablo-lobato",
+      "title": "Pablo Lobato",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/pablo-lobato.safetensors",
+        "sha256": "e8d68e6e729b4d97ae2253b90ddc6883ce8d812d20e62c0b9e029eb268ebb832",
+        "bytes": 590058832,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/lobato-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "tostiadvbg",
+      "title": "TostiAdvBg",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/tostiadvbg.safetensors",
+        "sha256": "d02e1b994abb059f38e5851e47a47e1c3ccff29fe2238ac05f734495daf277c6",
+        "bytes": 236117048,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/tostiadvbg-v1-qwen-image2512"
+      },
+      "license": "Apache-2.0",
+      "licenseTerms": {
+        "commercialUse": "allowed",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image-2512; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1440,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "blobfish",
+      "title": "Blobfish",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/blobfish.safetensors",
+        "sha256": "a6aba72f70e24ec15ec3a91cc0ba0cf6021165f0b2c6d97b41c14199dcea4f74",
+        "bytes": 590058832,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/blbfsh-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "trigger": "BLBFSH",
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "the-bad-taxidermist",
+      "title": "The Bad Taxidermist",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/the-bad-taxidermist.safetensors",
+        "sha256": "e1b57d7e816829f5701e1791d62609fc4fef9bcac30f1ccb8a1f2f70bd329510",
+        "bytes": 590058848,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/taxidermist-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "casivaras",
+      "title": "Casivaras",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/casivaras.safetensors",
+        "sha256": "796b8f44d517108c9ff4c1e047ab1abeee3bb3de01728a3bfb8256a7c7d4d740",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/casivaras-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "piccoli-figurativo",
+      "title": "Piccoli Figurativo",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/piccoli-figurativo.safetensors",
+        "sha256": "9734f88360277c021c24dc6192451f84b03b738d90bd9ef1c6623c26b4604981",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/piccoli-fig-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "piccoli-abstracto",
+      "title": "Piccoli Abstracto",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/piccoli-abstracto.safetensors",
+        "sha256": "bcc80ff82df5c29397e111172003239acdd5400ef5d1a307959a44d21b4a476d",
+        "bytes": 590058832,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/piccoli-abstracto-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "trigger": "abstract painting",
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "puzzolo",
+      "title": "Puzzolo",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/puzzolo.safetensors",
+        "sha256": "aa0fd8952081eaaf83c91dba3802ae362d95752f1dfa63592a5a74f3718ff175",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/njpuzzolo-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "panoramic-wide-fisheye",
+      "title": "Panoramic Wide Fisheye",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/panoramic-wide-fisheye.safetensors",
+        "sha256": "94fdf1914b9cab01df162487a5d39f8a92aedfd4b2567144b27705cde95c4726",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/panorama-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "panorama-v2-2512",
+      "title": "Panorama.v2.2512",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/panorama-v2-2512.safetensors",
+        "sha256": "36dc629514b10a4db25332c07649d0463c12c30bdad75783d5f4c8ae1053a248",
+        "bytes": 236117048,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/panorama-v2-qwen-image-2512"
+      },
+      "license": "Apache-2.0",
+      "licenseTerms": {
+        "commercialUse": "allowed",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md"
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image-2512; not yet judged on our stack."
+        }
+      },
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1440,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "china-zorrilla",
+      "title": "China Zorrilla",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/china-zorrilla.safetensors",
+        "sha256": "2c99c72067d9dd3cffc66c359d27df9d288945b03c10f30a26f0a56b72b1b7d0",
+        "bytes": 590058832,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/china-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "trigger": "tok",
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "martha",
+      "title": "Martha",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/martha.safetensors",
+        "sha256": "6d85d6f0889d8a6b9ff5cf06eb8aa8c2c554a9b066634c1565f1e6a92076f519",
+        "bytes": 590058832,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/martha-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "trigger": "martha",
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "la-sabelo-pablo-carayani-camara",
+      "title": "La Sabelo (Pablo Carayani Camará)",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/la-sabelo-pablo-carayani-camara.safetensors",
+        "sha256": "f1e49c3064b6449745ffec29adf603dd7e3440a76f1c0459bb3bcabd7943d0bc",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/lasabelo-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "trigger": "LASABELO",
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    },
+    {
+      "id": "estoy-presa",
+      "title": "Estoy Presa",
+      "kind": "plain",
+      "format": "diffusers-peft",
+      "baseModels": [
+        "qwen-image"
+      ],
+      "capabilities": [
+        "textToImage"
+      ],
+      "source": {
+        "host": "huggingface",
+        "repo": "xocialize/qwen-image-flash-loras",
+        "revision": "a60485ca35e32b69c2d71930c2ef3d3745271411",
+        "file": "loras/estoy-presa.safetensors",
+        "sha256": "0dd8b7ebb826fbf09e9d4e45fb2a1b960e75860668b4b2a3125a244998dc4e57",
+        "bytes": 590058840,
+        "gated": false,
+        "hashFrom": "hub",
+        "upstream": "https://huggingface.co/furaidosu/estoypresa-qwen-image-lora"
+      },
+      "license": "CreativeML-OpenRAIL-M",
+      "licenseTerms": {
+        "commercialUse": "conditional",
+        "gated": false,
+        "url": "https://huggingface.co/xocialize/qwen-image-flash-loras/blob/a60485ca35e32b69c2d71930c2ef3d3745271411/README.md",
+        "notice": "CreativeML Open RAIL-M: commercial use is allowed, subject to the licence's use restrictions (Attachment A), which pass on to anyone you share outputs or the adapter with."
+      },
+      "defaultStrength": 1.0,
+      "status": "candidate",
+      "clearance": {
+        "qwen-image": {
+          "level": "declared",
+          "note": "Trained on Qwen/Qwen-Image; not yet judged on our stack."
+        }
+      },
+      "trigger": "STYPRS",
+      "verification": {
+        "headerDialect": "diffusers-peft",
+        "tensors": 1680,
+        "dtypes": [
+          "BF16"
+        ],
+        "keyCheck": "every tensor maps onto the QwenImageEdit DiT (2026-10-19, header scan)"
+      }
+    }
+  ]
+}
