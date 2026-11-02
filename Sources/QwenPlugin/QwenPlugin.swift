@@ -213,7 +213,7 @@ let flashParams: JSONValue = ["type": "object", "additionalProperties": false, "
 
 public let qwenPlugin = GaeaPluginDefinition(
     id: "com.xocialize.gaea.qwen-image",
-    version: "0.2.0",
+    version: "0.2.1",
     minGaea: "0.7.0",
     team: "CFZS6RXUCP",
     repo: "https://github.com/xocialize-code/gaea-plugin-qwen-image",
